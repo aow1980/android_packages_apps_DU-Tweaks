@@ -76,6 +76,12 @@
             settings:units="ms"
             android:persistent="false" />
 
+            <PreferenceScreen
+                android:key="doze_settings"
+                android:title="@string/doze_settings_title"
+                android:summary="@string/doze_settings_summary"
+                android:fragment="com.dirtyunicorns.dutweaks.doze.DozeSettings" />
+
         </PreferenceCategory>
 
 </PreferenceScreen>
