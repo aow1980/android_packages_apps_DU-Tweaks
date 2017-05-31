@@ -37,6 +37,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -265,18 +266,21 @@ public class DozeSettings extends SettingsPreferenceFragment {
         }
         Log.d(TAG, "save = " + sb.toString());
         Settings.Global.putString(getContentResolver(), DEVICE_IDLE_CONSTANTS, sb.toString());
+        showApplyToast();
     }
 
     private void restoreDefaults() {
         Log.d(TAG, "restoreDefaults");
         Settings.Global.putString(getContentResolver(), DEVICE_IDLE_CONSTANTS, null);
         getSettings();
+        showApplyToast();
     }
 
     private void applyProfile(String settings) {
         Log.d(TAG, "apply = " + settings);
         Settings.Global.putString(getContentResolver(), DEVICE_IDLE_CONSTANTS, settings);
         getSettings();
+        showApplyToast();
     }
 
     private void displayProfiles() {
@@ -424,5 +428,9 @@ public class DozeSettings extends SettingsPreferenceFragment {
                 idleConfig.setVisibility(!mIdleConfigKeysBasic.contains(configKey) ? View.GONE : View.VISIBLE);
             }
         }
+    }
+
+    private void showApplyToast() {
+        Toast.makeText(mContext, getResources().getString(R.string.doze_settings_applied), Toast.LENGTH_SHORT).show();
     }
 }

@@ -803,6 +803,7 @@
     <string name="string_seconds">seconds</string>
     <string name="string_default">Default</string>
     <string name="action_filter">Filter</string>
+    <string name="doze_settings_applied">Settings applied</string>
 
     <string name="DESC_INACTIVE_TIMEOUT">This is the time, after becoming inactive, at which we start looking at the motion sensor to determine if the device is being left alone. We don\'t do this immediately after going inactive just because we don\'t want to be continually running the significant motion sensor whenever the screen is off</string>
     <string name="DESC_SENSING_TIMEOUT">If we don\'t receive a callback from AnyMotion in this amount of time + locating_to, we will change from STATE_SENSING to STATE_INACTIVE, and any AnyMotion callbacks while not in STATE_SENSING will be ignored</string>
