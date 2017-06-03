@@ -84,6 +84,7 @@ public class DozeSettings extends SettingsPreferenceFragment {
     final long MAX_TEMP_APP_WHITELIST_DURATION = 5 * 60 * 1000L;
     final long MMS_TEMP_APP_WHITELIST_DURATION = 60 * 1000L;
     final long SMS_TEMP_APP_WHITELIST_DURATION = 20 * 1000L;
+    final long NOTIFICATION_WHITELIST_DURATION = 30 * 1000L;
 
     private int millisecondsInOneSecond = 1000;
     private LinearLayout mContainer;
@@ -155,6 +156,7 @@ public class DozeSettings extends SettingsPreferenceFragment {
         mIdleConfigValues.add(MAX_TEMP_APP_WHITELIST_DURATION);
         mIdleConfigValues.add(MMS_TEMP_APP_WHITELIST_DURATION);
         mIdleConfigValues.add(SMS_TEMP_APP_WHITELIST_DURATION);
+        mIdleConfigValues.add(NOTIFICATION_WHITELIST_DURATION);
 
         mContainer = (LinearLayout) view.findViewById(R.id.idle_config_container);
         createOptionsList(inflater);
